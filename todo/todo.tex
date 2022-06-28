@@ -1,0 +1,75 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome5}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{ulem}
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+
+\newcommand{\todoListStart}{
+	\begin{itemize}
+		\setlength\itemsep{-1mm}
+}
+
+\newcommand{\todoListEnd}{
+	\end{itemize}
+}
+
+\newcommand{\todoSubListStart}{
+	\vspace{-3mm}
+	\begin{itemize}
+	\setlength\itemsep{-1mm}
+}
+
+\newcommand{\todoSubListEnd}{
+	\end{itemize}
+}
+
+\newcommand{\todoListHeader}[1]{
+	{\Large #1}
+}
+
+\newcommand{\todoListLine}{
+	\vspace{2mm}
+	\hrule
+	\vspace{2mm}
+}
+
+
+\begin{document}
+	
+	\centering
+	
+	\section*{TODO}
+	
+	\todoListLine
+	
+	\todoListHeader{First List}
+	
+	\todoListStart
+		\item \sout{First item that's finished}
+		\item Second item
+		\todoSubListStart
+			\item First sub-item
+			\item Second sub-item
+		\todoSubListEnd
+	\todoListEnd
+	
+	\todoListLine
+	
+	\todoListHeader{Second List}
+	
+	\todoListStart
+		\item \sout{First item that's finished}
+		\item Second item
+		\todoSubListStart
+			\item First sub-item
+			\item Second sub-item
+		\todoSubListEnd
+	\todoListEnd
+	
+\end{document}
